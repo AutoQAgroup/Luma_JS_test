@@ -55,7 +55,6 @@ jobs:
         if: always()
         with:
           files: "reports/*.xml"
-          github_token: ${{ secrets.MY_ACCESS_TOKEN }}
 
       - name: Artifacts
         uses: actions/upload-artifact@v2
