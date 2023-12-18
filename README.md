@@ -1,3 +1,3 @@
 # BugBusters
 
-writing cypress tests for https://www.saucedemo.com/
+writing cypress tests for https://magento.softwaretestingboard.com/

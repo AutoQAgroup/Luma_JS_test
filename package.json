@@ -1,0 +1,14 @@
+{
+  "name": "bugbusters",
+  "version": "1.0.0",
+  "description": "writing cypress tests for https://magento.softwaretestingboard.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.1"
+  }
+}
