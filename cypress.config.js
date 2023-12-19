@@ -6,6 +6,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   defaultCommandTimeout: 7000,
   e2e: {
+    baseUrl: 'https://magento.softwaretestingboard.com/',
     setupNodeEvents(on, config) {
 
     },
