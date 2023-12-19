@@ -1,4 +1,9 @@
 name: CI
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
 
 on:
   pull_request:
@@ -49,6 +54,12 @@ jobs:
         if: always()
         with:
           paths: reports/*.xml
+      
+      - name: Publish test results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: "reports/*.xml"
 
       - name: Artifacts
         uses: actions/upload-artifact@v2
