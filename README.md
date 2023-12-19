@@ -1,6 +1,6 @@
-# BugBusters
+# Cypress_Test_Project
 
-writing cypress tests for https://magento.softwaretestingboard.com/
+Group project to practice writing cypress tests for https://magento.softwaretestingboard.com/
 
 After cloning project run "npm ci"
 
