@@ -50,13 +50,6 @@ jobs:
         with:
           paths: reports/*.xml
 
-      - name: Publish test results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          github_token: ${{ secrets.TOKEN_NAME }}
-          files: "reports/*.xml"
-
       - name: Artifacts
         uses: actions/upload-artifact@v2
         if: failure()
