@@ -1,12 +1,13 @@
 // <reference types="cypress"/>
 
 import HomePage from "../pageObjects/HomePage";
+import pageTitle from "../fixtures/jacketsPageData.json"
 
 describe("checkWomanTopsJacketsLink", () => {
   const homePage = new HomePage();
   
   beforeEach(() => {
-    cy.visit("https://magento.softwaretestingboard.com/");
+    cy.visit("/");
   });
 
   it("TC0001_Check the link for Woman/Tops/Jackets", () => {
@@ -16,8 +17,7 @@ describe("checkWomanTopsJacketsLink", () => {
       .clickWomanJacketsLink()
       .getJacketsTitle()
       .should("be.visible")
-      .and("have.text", "Jackets");
+      .and("have.text", pageTitle.pageTitle);
 
-    //cy.get("#ui-id-4").trigger('mouseover');
   });
 });
