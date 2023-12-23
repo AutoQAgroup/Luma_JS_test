@@ -10,11 +10,11 @@ describe("checkWomanTopsJacketsLink", () => {
     cy.visit("/");
   });
 
-  it("TC0001_Check the link for Woman/Tops/Jackets", () => {
+  it("Check the link for Woman/Tops/Jackets", () => {
     homePage
       .hoverWomanMainMenuLink()
       .hoverWomanTopsLink()
-      // .clickWomanJacketsLink()
+      .clickWomanJacketsLink()
       .getJacketsTitle()
       .should("be.visible")
       .and("have.text", pageTitle.pageTitle);
