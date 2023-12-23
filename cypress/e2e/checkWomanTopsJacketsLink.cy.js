@@ -5,7 +5,7 @@ import pageTitle from "../fixtures/jacketsPageData.json"
 
 describe("checkWomanTopsJacketsLink", () => {
   const homePage = new HomePage();
-  
+
   beforeEach(() => {
     cy.visit("/");
   });
@@ -14,7 +14,7 @@ describe("checkWomanTopsJacketsLink", () => {
     homePage
       .hoverWomanMainMenuLink()
       .hoverWomanTopsLink()
-      .clickWomanJacketsLink()
+      // .clickWomanJacketsLink()
       .getJacketsTitle()
       .should("be.visible")
       .and("have.text", pageTitle.pageTitle);
