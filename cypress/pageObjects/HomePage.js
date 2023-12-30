@@ -1,4 +1,5 @@
 import WomanJacketsPage from "../pageObjects/WomanJacketsPage";
+import ProductListPage from "./ProductListPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -20,7 +21,7 @@ class HomePage {
   clickWomanJacketsLink() {
     this.getWomanJacketsLink().click();
 
-    return new WomanJacketsPage();
+    return new ProductListPage();
   }
 }
 
