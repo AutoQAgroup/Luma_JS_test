@@ -1,8 +1,8 @@
 // <reference types="cypress"/>
 
 import HomePage from "../pageObjects/HomePage";
-import homePageData from "../fixtures/homePageData.json";
 import PerformanceFabricsPage from "../pageObjects/PerformanceFabricsPage";
+import homePageData from "../fixtures/homePageData.json";
 import performanceFabricsPageData from "../fixtures/performanceFabricsPageData.json";
 
 describe("searchShopPerformanceWidget", () => {
