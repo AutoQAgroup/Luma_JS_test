@@ -4,12 +4,8 @@ import HomePage from "../pageObjects/HomePage";
 import homePageData from "../fixtures/homePageData.json"
 describe("checkMainPageTitleAndLogo", () => {
   const homePage = new HomePage();
-  
-  beforeEach(() => {
-    cy.visit("/");
-  });
 
-  it("TC_0001.001.001 | Main page > Self > Check Title visibility", () => {
+  it("TC_001.001.001 | Main page > Self > Check Title visibility", () => {
     homePage
       .getHomePageLogo()
       .should("be.visible")
@@ -21,7 +17,7 @@ describe("checkMainPageTitleAndLogo", () => {
       .and("include", homePageData.title );
   });
 
-  it("TC_0001.001.002 | Main page > Self > Check image boxes visibility", () => {
+  it("TC_001.001.002 | Main page > Self > Check image boxes visibility", () => {
     homePage
     .getImageBoxButton()
     .should("be.visible")
