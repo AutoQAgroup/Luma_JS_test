@@ -1,0 +1,13 @@
+{
+  "title": "luma",
+  "attribute": "logo",
+  "actionIconsQuantity" : "5",
+  "actionIcons": [
+    "Shop Pants",
+    "Shop Tees",
+    "Shop Erin Recommends",
+    "Shop Performance",
+    "Shop Eco-Friendly"
+  ],
+  "actionButton": "Shop New Yoga"
+}
