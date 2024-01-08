@@ -1,4 +1,5 @@
 import WomanJacketsPage from "../pageObjects/WomanJacketsPage";
+import ErinRecommendsPage from "./ErinRecommendsPage";
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
   getWomanTopsLink = () => cy.get("#ui-id-9");
@@ -7,6 +8,7 @@ class HomePage {
   getTitleName = () => cy.get('a.logo img');
   getImageBoxButton = () => cy.get('span[class="action more button"]');
   getImageBoxesLinks = () => cy.get('span[class="action more icon"]');
+  getErinRecommendsLink = () => cy.get('span[class="action more icon"]').contains('Shop Erin Recommends')
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -24,6 +26,11 @@ class HomePage {
     this.getWomanJacketsLink().click();
 
     return new WomanJacketsPage();
+  }
+
+  clickErinRecommendsLink() {
+    this.getErinRecommendsLink().click();
+    return new ErinRecommendsPage();
   }
 }
 
