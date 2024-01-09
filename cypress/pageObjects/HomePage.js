@@ -8,7 +8,7 @@ class HomePage {
   getWomanTopsLink = () => cy.get("#ui-id-9");
   getWomanJacketsLink = () => cy.get("#ui-id-11");
   getHomePageLogo = () => cy.get("a.logo");
-  getTitleName = () => cy.get('a.logo img');
+  getTitleName = () => cy.get("a.logo img");
   getImageBoxButton = () => cy.get('span[class="action more button"]');
   getImageBoxesLinks = () => cy.get('span[class="action more icon"]');
   getErinRecommendsLink = () => cy.get('span[class="action more icon"]').contains('Shop Erin Recommends');
@@ -44,10 +44,43 @@ class HomePage {
     return new EcoFriendlyPage();
   }
 
-  clickShopPerformanceWidget(){
+  clickShopPerformanceWidget() {
     this.getShopPerformanceWidget().click();
 
-    return new PerformanceFabricsPage()
+    return new PerformanceFabricsPage();
+  }
+
+  verifyLogoPresence() {
+    this.getLumaLogo().should("be.visible");
+    this.getLumaLogo().find("img").should("have.attr", "src");
+
+    return this;
+  }
+
+  visitPages(urls) {
+    urls.forEach((page) => {
+      cy.visit(page);
+      this.verifyLogoPresence();
+    });
+  }
+
+  clickLumaLogo() {
+    this.getLumaLogo().click();
+
+    return this;
+  }
+
+  verifyBaseUrl() {
+    this.getHomePageUrl().should("eq", Cypress.config().baseUrl);
+  }
+
+  returnHomePage(urls) {
+    urls.forEach((page) => {
+      cy.visit(page);
+      this.clickLumaLogo();
+      this.verifyBaseUrl();
+      this.getMainContent().should("be.visible");
+    });
   }
 }
 
