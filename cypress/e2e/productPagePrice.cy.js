@@ -2,7 +2,7 @@
 
 import HomePage from "../pageObjects/HomePage";
 import ProductPage from "../pageObjects/ProductPage";
-import priceTag from "../fixtures/ProductPage.json";
+import priceTag from "../fixtures/ProductPageData.json";
 
 
 describe("checkProductPagePrice", () => {
@@ -10,7 +10,6 @@ describe("checkProductPagePrice", () => {
     const productPage = new ProductPage();
 
     beforeEach(() => {
-        cy.visit("/");
         homePage
             .hoverWomanMainMenuLink()
             .hoverWomanTopsLink()
