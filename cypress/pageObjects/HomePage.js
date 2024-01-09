@@ -3,6 +3,7 @@ import ProductListPage from "./ProductListPage";
 import EcoFriendlyPage from "./EcoFriendlyPage";
 import ErinRecommendsPage from "./ErinRecommendsPage";
 import PerformanceFabricsPage from "./PerformanceFabricsPage";
+import SearchResultPage from "./SearchResultPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -23,6 +24,7 @@ class HomePage {
   getLumaLogo = () => cy.get("a[class='logo']");
   getHomePageUrl = () => cy.url();
   getMainContent = () => cy.get("#maincontent");
+  getSearchInput = () => cy.get("#search");
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -80,6 +82,12 @@ class HomePage {
 
   verifyBaseUrl() {
     this.getHomePageUrl().should("eq", Cypress.config().baseUrl);
+  }
+
+  performSearch(searchQuery) {
+    this.getSearchInput().type(searchQuery).type('{enter}')
+
+    return new SearchResultPage()
   }
 
   returnHomePage(urls) {
