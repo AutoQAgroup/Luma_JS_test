@@ -1,4 +1,5 @@
 import WomanJacketsPage from "../pageObjects/WomanJacketsPage";
+import ProductListPage from "./ProductListPage";
 import EcoFriendlyPage from "./EcoFriendlyPage";
 import ErinRecommendsPage from "./ErinRecommendsPage";
 import PerformanceFabricsPage from "./PerformanceFabricsPage";
@@ -38,7 +39,7 @@ class HomePage {
   clickWomanJacketsLink() {
     this.getWomanJacketsLink().click();
 
-    return new WomanJacketsPage();
+    return new ProductListPage();
   }
 
   clickErinRecommendsLink() {
