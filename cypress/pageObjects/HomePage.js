@@ -11,10 +11,17 @@ class HomePage {
   getTitleName = () => cy.get("a.logo img");
   getImageBoxButton = () => cy.get('span[class="action more button"]');
   getImageBoxesLinks = () => cy.get('span[class="action more icon"]');
-  getErinRecommendsLink = () => cy.get('span[class="action more icon"]').contains('Shop Erin Recommends');
-  getEcoFriendlyLink = () => cy.get('span[class="action more icon"]').contains('Shop Eco-Friendly');
-  getShopPerformanceWidget = () => cy.get("a.block-promo.home-performance span[class='content bg-white']");
-  getShopPerformanceWidgetText = () => cy.get("a.block-promo.home-performance > span > span.action.more.icon");
+  getErinRecommendsLink = () =>
+    cy.get('span[class="action more icon"]').contains("Shop Erin Recommends");
+  getEcoFriendlyLink = () =>
+    cy.get('span[class="action more icon"]').contains("Shop Eco-Friendly");
+  getShopPerformanceWidget = () =>
+    cy.get("a.block-promo.home-performance span[class='content bg-white']");
+  getShopPerformanceWidgetText = () =>
+    cy.get("a.block-promo.home-performance > span > span.action.more.icon");
+  getLumaLogo = () => cy.get("a[class='logo']");
+  getHomePageUrl = () => cy.url();
+  getMainContent = () => cy.get("#maincontent");
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
