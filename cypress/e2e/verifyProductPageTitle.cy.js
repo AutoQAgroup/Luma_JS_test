@@ -1,7 +1,7 @@
 // <reference types="cypress"/>
 
 import ProductPage from "../pageObjects/ProductPage";
-import ProductPageData from "../fixtures/productPageData.json";
+import ProductPageData from "../fixtures/ProductPageData.json";
 
 describe("verifyProductPageTitle", ()=>{
     const productPage = new ProductPage();
