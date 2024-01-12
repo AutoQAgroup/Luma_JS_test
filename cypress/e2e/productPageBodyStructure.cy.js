@@ -1,11 +1,8 @@
 // <reference types="cypress"/>
-
-// import HomePage from "../pageObjects/HomePage";
 import ProductPage from "../pageObjects/ProductPage";
 import ProductPageData from "../fixtures/productPageData.json";
 
 describe("productPageBodyStructure", () => {
-//   const homePage = new HomePage();
   const productPage = new ProductPage();
 
   beforeEach(() => {
