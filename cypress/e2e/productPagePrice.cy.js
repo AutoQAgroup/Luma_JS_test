@@ -2,7 +2,7 @@
 
 import HomePage from "../pageObjects/HomePage";
 import ProductPage from "../pageObjects/ProductPage";
-import priceTag from "../fixtures/ProductPageData.json";
+import priceTag from "../fixtures/productPageData.json";
 
 
 describe("checkProductPagePrice", () => {
