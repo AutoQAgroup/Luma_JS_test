@@ -16,8 +16,6 @@ class ProductPage {
   getProductPageBody = () => cy.get('body[data-container="body"]');
   getProductPageFooter = () => cy.get("footer.page-footer");
   getProductPageCopyright = () => cy.get("small.copyright");
-  getProductPrice = () => cy.get(".product-info-price .price");
-  getProductPriceLabel = () => cy.get(".product-info-price .price-label");
 }
 
 export default ProductPage;

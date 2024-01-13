@@ -2,19 +2,16 @@
 
 import HomePage from "../pageObjects/HomePage";
 import ProductPage from "../pageObjects/ProductPage";
-import priceTag from "../fixtures/productPageData.json";
+import {priceTag, pdpUrls } from "../fixtures/productPageData.json";
 
 
-describe("checkProductPagePrice", () => {
-    const homePage = new HomePage();
+describe("productPagePrice", () => {
     const productPage = new ProductPage();
+    const homePage = new HomePage();
 
     beforeEach(() => {
         homePage
-            .hoverWomanMainMenuLink()
-            .hoverWomanTopsLink()
-            .clickWomanJacketsLink()
-            .clickFirstProductImageLink()
+        .visitRandomPDPFromArrayUrl(pdpUrls)
     });
 
     it("check that product price contains $ and a number", () => {
@@ -31,7 +28,7 @@ describe("checkProductPagePrice", () => {
     it("check label above price", () => {
         productPage
             .getProductPriceLabel()
-            .should('have.text', priceTag.priceTag)
+            .should('have.text', priceTag)
 
     })
 });
