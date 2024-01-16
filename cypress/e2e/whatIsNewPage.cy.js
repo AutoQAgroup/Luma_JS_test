@@ -17,9 +17,10 @@ describe("whatIsNewPage", () => {
         .verifyWhatIsNewWidgetEndPoint(
           whatIsNewPageData.whatIsNewWidgetEndPoint[ind]
         );
-      whatIsNewPage.verifyWhatIsNewWidgetHeader(
-        whatIsNewPageData.headersWhatIsNewWidgetPages[ind]
-      );
+      whatIsNewPage
+        .getWhatIsNewWidgetsPageHeader()
+        .should("be.visible")
+        .and("contain", whatIsNewPageData.headersWhatIsNewWidgetPages[ind]);
     });
   });
 });
