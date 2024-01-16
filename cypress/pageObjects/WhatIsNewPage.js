@@ -1,15 +1,19 @@
 class WhatIsNewPage {
-  getWhatIsNewWidgetBlock = () => cy.get(".block-promo");
   getWhatIsNewWidgetsPageHeader = () => cy.get("#page-title-heading");
+  getWhatIsNewWidgetContent = () => cy.get("span[class='content']");
 
   clickWhatIsNewWidgetBlock(index) {
-    this.getWhatIsNewWidgetBlock().eq(index).click();
+    this.getWhatIsNewWidgetContent().eq(index).click();
 
     return this;
   }
 
   verifyWhatIsNewWidgetEndPoint(text) {
     cy.url().should("contain", text);
+  }
+
+  chooseWhatIsNewWidgetContent(index) {
+    return this.getWhatIsNewWidgetContent().eq(index)
   }
 }
 
