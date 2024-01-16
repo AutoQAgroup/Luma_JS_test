@@ -2,6 +2,7 @@
   "priceTag": "As low as",
   "titlePage": "Breathe-Easy Tank",
   "ExampleUrl": "https://magento.softwaretestingboard.com/breathe-easy-tank.html",
+  "ExampleUrlEndPoint": "breathe-easy-tank",
   "structurePage": [
     "HEADER",
     "navigation",
