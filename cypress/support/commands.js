@@ -11,14 +11,8 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-
-import HomePage from "../pageObjects/HomePage";
-const homePage = new HomePage();
-
-Cypress.Commands.add("redirectToWhatIsNewPage", () => {
-  homePage.clickWhatsNewPageLink();
-});
-
+//
+//
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //

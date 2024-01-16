@@ -4,7 +4,6 @@ import EcoFriendlyPage from "./EcoFriendlyPage";
 import ErinRecommendsPage from "./ErinRecommendsPage";
 import PerformanceFabricsPage from "./PerformanceFabricsPage";
 import SearchResultPage from "./SearchResultPage";
-import WhatIsNewPage from "./WhatIsNewPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -26,7 +25,7 @@ class HomePage {
   getHomePageUrl = () => cy.url();
   getMainContent = () => cy.get("#maincontent");
   getSearchInput = () => cy.get("#search");
-  getWhatIsNewPageLink = () => cy.get("a[href='https://magento.softwaretestingboard.com/what-is-new.html']");
+  getWidgetLinks = () => cy.get('div.block-promo-wrapper a');
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -98,14 +97,14 @@ class HomePage {
       this.clickLumaLogo();
       this.verifyBaseUrl();
       this.getMainContent().should("be.visible");
-    });
+    }); 
   }
 
-  clickWhatsNewPageLink(){
-    this.getWhatIsNewPageLink().click()
+  clickWidgetLinks(index) {
+    this.getWidgetLinks().eq(index).click()
 
-    return new WhatIsNewPage() 
+    return cy.url()
+
   }
 }
-
 export default HomePage;
