@@ -25,6 +25,7 @@ class HomePage {
   getHomePageUrl = () => cy.url();
   getMainContent = () => cy.get("#maincontent");
   getSearchInput = () => cy.get("#search");
+  getWidgetLinks = () => cy.get('div.block-promo-wrapper a');
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -96,7 +97,16 @@ class HomePage {
       this.clickLumaLogo();
       this.verifyBaseUrl();
       this.getMainContent().should("be.visible");
-    });
+    }); 
+  }
+
+  clickWidgetLinks(widgetName, index) {
+    getWidgetLinks().eq(index).as('widget')
+    cy.get('@widget').contains(widgetName)
+    cy.get('@widget').click()
+    
+    return cy.url()
+
   }
 }
 

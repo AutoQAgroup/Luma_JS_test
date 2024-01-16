@@ -9,5 +9,21 @@
     "Shop Performance",
     "Shop Eco-Friendly"
   ],
-  "actionButton": "Shop New Yoga"
+  "actionButton": "Shop New Yoga",
+  "widgetBlock": {
+    "widgetLinks": [
+      "/promotions/pants-all.html",
+      "/promotions/tees-all.html",
+      "/collections/erin-recommends.html",
+      "/collections/performance-fabrics.html",
+      "/collections/eco-friendly.html"
+    ],
+    "widgetHeaderName": [
+      "Pants",
+      "Tees",
+      "Erin Recommends",
+      "Performance Fabrics",
+      "Eco Friendly"
+    ]
+  }
 }
