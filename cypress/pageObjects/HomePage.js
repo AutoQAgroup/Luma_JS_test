@@ -100,14 +100,11 @@ class HomePage {
     }); 
   }
 
-  clickWidgetLinks(widgetName, index) {
-    getWidgetLinks().eq(index).as('widget')
-    cy.get('@widget').contains(widgetName)
-    cy.get('@widget').click()
-    
+  clickWidgetLinks(index) {
+    this.getWidgetLinks().eq(index).click()
+
     return cy.url()
 
   }
 }
-
 export default HomePage;

@@ -2,12 +2,14 @@
 
 import HomePage from "../pageObjects/HomePage";
 import {widgetBlock, actionIcons} from "../fixtures/homePageData.json"
+
 describe('checkRedirectsHomePageWidgets', () =>{
    const homePage = new HomePage(); 
+
    actionIcons.forEach((widget, index) => {
-   it(`RF_001.002 |001.003 | 001.004.001 | Main page > Self >Check ${widgetName}, when widgets are clicked`, () =>{
+   it(`RF_001.002 |001.003 | 001.004.001 | Main page > Self > Check ${widget}, when widgets are clicked`, function(){
     homePage
-    .clickWidgetLinks(widget, index)
+    .clickWidgetLinks(index)
     .should("contain", widgetBlock.widgetLinks[index])
     cy.contains(widgetBlock.widgetHeaderName[index]);
    })
