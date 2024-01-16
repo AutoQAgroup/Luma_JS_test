@@ -4,6 +4,7 @@ import EcoFriendlyPage from "./EcoFriendlyPage";
 import ErinRecommendsPage from "./ErinRecommendsPage";
 import PerformanceFabricsPage from "./PerformanceFabricsPage";
 import SearchResultPage from "./SearchResultPage";
+import WhatIsNewPage from "./WhatIsNewPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -25,6 +26,7 @@ class HomePage {
   getHomePageUrl = () => cy.url();
   getMainContent = () => cy.get("#maincontent");
   getSearchInput = () => cy.get("#search");
+  getWhatIsNewPageLink = () => cy.get("a[href='https://magento.softwaretestingboard.com/what-is-new.html']");
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -97,6 +99,12 @@ class HomePage {
       this.verifyBaseUrl();
       this.getMainContent().should("be.visible");
     });
+  }
+
+  clickWhatsNewPageLink(){
+    this.getWhatIsNewPageLink().click()
+
+    return new WhatIsNewPage() 
   }
 }
 

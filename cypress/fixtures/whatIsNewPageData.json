@@ -1,0 +1,18 @@
+{
+  "whatIsNewWidgetName": [
+    "New Luma Yoga Collection",
+    "Whatever day brings",
+    "A sense of renewal"
+  ],
+  "whatIsNewWidgetEndPoint": [
+    "/collections/yoga-new.html",
+    "/collections/performance-new.html",
+    "/collections/eco-new.html"
+  ],
+
+  "headersWhatIsNewWidgetPages": [
+    "New Luma Yoga Collection",
+    "Performance Sportswear New",
+    "Eco Collection New"
+  ]
+}
