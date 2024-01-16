@@ -11,7 +11,7 @@ describe("whatIsNewPage", () => {
   });
 
   whatIsNewPageData.whatIsNewWidgetName.forEach((widgetName, ind) => {
-    it(`TC_006.003-004-005.001 | What’s New page > Verify "${widgetName}" widget is clickable`, function () {
+    it(`TC_006.00${3+ind}.001 | What’s New page > Verify "${widgetName}" widget is clickable`, function () {
       whatIsNewPage
         .clickWhatIsNewWidgetBlock(ind)
         .verifyWhatIsNewWidgetEndPoint(
