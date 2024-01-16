@@ -4,7 +4,7 @@ import HomePage from "../pageObjects/HomePage";
 import SearchResultPage from "../pageObjects/SearchResultPage";
 import {queries, SRPContent} from "../fixtures/searchResultPageData.json";
 
-describe("checkProductPagePrice", () => {
+describe("searchPageResults", () => {
     const homePage = new HomePage();
     const searchResultPage = new SearchResultPage();
 

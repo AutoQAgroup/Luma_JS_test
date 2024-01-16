@@ -4,6 +4,7 @@ import EcoFriendlyPage from "./EcoFriendlyPage";
 import ErinRecommendsPage from "./ErinRecommendsPage";
 import PerformanceFabricsPage from "./PerformanceFabricsPage";
 import SearchResultPage from "./SearchResultPage";
+import ProductPage from "./ProductPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -89,6 +90,15 @@ class HomePage {
     this.getSearchInput().type(searchQuery).type('{enter}')
 
     return new SearchResultPage()
+  }
+
+  visitRandomPDPFromArrayUrl(array) {
+    let randomUrlIndex = Math.floor(Math.random() * array.length)
+    let randomUrl = array[randomUrlIndex];
+
+    cy.visit(randomUrl)
+    
+    return new ProductPage()
   }
 
   returnHomePage(urls) {
