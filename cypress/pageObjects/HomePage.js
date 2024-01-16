@@ -119,10 +119,10 @@ class HomePage {
 
   }
 
-  clickWhatsNewPageLink(){
-    this.getWhatIsNewPageLink().click()
+  clickWhatsNewPageLink() {
+    this.getWhatIsNewPageLink().click();
 
-    return new WhatIsNewPage() 
+    return new WhatIsNewPage();
   }
 }
 export default HomePage;
