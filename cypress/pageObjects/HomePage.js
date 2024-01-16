@@ -5,6 +5,7 @@ import ErinRecommendsPage from "./ErinRecommendsPage";
 import PerformanceFabricsPage from "./PerformanceFabricsPage";
 import SearchResultPage from "./SearchResultPage";
 import ProductPage from "./ProductPage";
+import WhatIsNewPage from "./WhatIsNewPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -27,6 +28,7 @@ class HomePage {
   getMainContent = () => cy.get("#maincontent");
   getSearchInput = () => cy.get("#search");
   getWidgetLinks = () => cy.get('div.block-promo-wrapper a');
+  getWhatIsNewPageLink = () => cy.get("a[href='https://magento.softwaretestingboard.com/what-is-new.html']");
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -115,6 +117,12 @@ class HomePage {
 
     return cy.url()
 
+  }
+
+  clickWhatsNewPageLink() {
+    this.getWhatIsNewPageLink().click();
+
+    return new WhatIsNewPage();
   }
 }
 export default HomePage;
