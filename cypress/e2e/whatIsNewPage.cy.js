@@ -23,4 +23,13 @@ describe("whatIsNewPage", () => {
         .and("contain", whatIsNewPageData.headersWhatIsNewWidgetPages[ind]);
     });
   });
+
+  whatIsNewPageData.whatIsNewWidgetName.forEach((widgetName, ind) => {
+    it(`TC_006.00${3 + ind}.002 | What’s New page > Verify "${widgetName}" widget is visible and have text`, function () {
+      whatIsNewPage
+        .chooseWhatIsNewWidgetContent(ind)
+        .should("be.visible")
+        .and("contain", whatIsNewPageData.whatIsNewWidgetText[ind]);
+    });
+  });
 });
