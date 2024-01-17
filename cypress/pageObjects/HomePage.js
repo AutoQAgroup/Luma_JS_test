@@ -124,5 +124,23 @@ class HomePage {
 
     return new WhatIsNewPage();
   }
+
+  verifySearchBar() {
+    this.getSearchInput().should("be.visible");
+    this.getSearchInput().invoke("attr","placeholder")
+    .then((placeholder) => {
+      expect(placeholder).to.eql("Search entire store here...")
+    })
+
+    return this;
+  }
+
+  visitPagesSearchBar(urls) {
+    urls.forEach((page) => {
+      cy.visit(page);
+      this.verifySearchBar();
+    });
+  }
+
 }
 export default HomePage;
