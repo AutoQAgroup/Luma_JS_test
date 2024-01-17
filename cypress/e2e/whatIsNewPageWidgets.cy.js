@@ -3,7 +3,7 @@
 import WhatIsNewPage from "../pageObjects/WhatIsNewPage";
 import whatIsNewPageData from "../fixtures/whatIsNewPageData.json";
 
-describe("whatIsNewPage", () => {
+describe("whatIsNewPageWidgets", () => {
   const whatIsNewPage = new WhatIsNewPage();
 
   beforeEach(() => {
