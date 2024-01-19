@@ -6,6 +6,7 @@ import PerformanceFabricsPage from "./PerformanceFabricsPage";
 import SearchResultPage from "./SearchResultPage";
 import ProductPage from "./ProductPage";
 import WhatIsNewPage from "./WhatIsNewPage";
+import GearPage from "./GearPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -15,6 +16,7 @@ class HomePage {
   getTitleName = () => cy.get("a.logo img");
   getImageBoxButton = () => cy.get('span[class="action more button"]');
   getImageBoxesLinks = () => cy.get('span[class="action more icon"]');
+  getGearPageLink = () => cy.get('a[id="ui-id-6"]');
   getErinRecommendsLink = () =>
     cy.get('span[class="action more icon"]').contains("Shop Erin Recommends");
   getEcoFriendlyLink = () =>
@@ -46,6 +48,12 @@ class HomePage {
     this.getWomanJacketsLink().click();
 
     return new ProductListPage();
+  }
+
+  clickGearPageLink() {
+    this.getGearPageLink().click();
+
+    return new GearPage();
   }
 
   clickErinRecommendsLink() {
