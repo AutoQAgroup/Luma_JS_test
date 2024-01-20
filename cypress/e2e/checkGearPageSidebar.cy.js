@@ -1,8 +1,8 @@
 //<reference types="cypress"/>
 
 import { it } from "mocha";
-import GearPage from "../pageObjects/GearPage.js";
 import gearPageData from "../fixtures/gearPageData.json";
+import GearPage from "../pageObjects/GearPage.js";
 
 describe('checkGearPageSidebar', () => {
     const gearPage = new GearPage();
