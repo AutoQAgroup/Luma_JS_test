@@ -1,4 +1,4 @@
-///<reference types="cypress"/>
+//<reference types="cypress"/>
 
 import GearPage from "../pageObjects/GearPage";
 import gearPageData from "../fixtures/gearPageData.json"
