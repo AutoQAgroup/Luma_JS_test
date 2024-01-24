@@ -27,7 +27,7 @@ class HomePage {
   getHomePageUrl = () => cy.url();
   getMainContent = () => cy.get("#maincontent");
   getSearchInput = () => cy.get("#search");
-  getWidgetLinks = () => cy.get('div.block-promo-wrapper a');
+  getWidgetLinks = () => cy.get('div.blocks-promo a');
   getWhatIsNewPageLink = () => cy.get("a[href='https://magento.softwaretestingboard.com/what-is-new.html']");
 
   hoverWomanMainMenuLink() {

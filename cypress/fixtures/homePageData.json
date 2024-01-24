@@ -1,8 +1,9 @@
 {
   "title": "luma",
   "attribute": "logo",
-  "actionIconsQuantity" : "5",
+  "actionIconsQuantity" : "6",
   "actionIcons": [
+    "New Luma Yoga Collection",
     "Shop Pants",
     "Shop Tees",
     "Shop Erin Recommends",
@@ -12,6 +13,7 @@
   "actionButton": "Shop New Yoga",
   "widgetBlock": {
     "widgetLinks": [
+      "/collections/yoga-new.html",
       "/promotions/pants-all.html",
       "/promotions/tees-all.html",
       "/collections/erin-recommends.html",
@@ -19,6 +21,7 @@
       "/collections/eco-friendly.html"
     ],
     "widgetHeaderName": [
+      "New Luma Yoga Collection",
       "Pants",
       "Tees",
       "Erin Recommends",

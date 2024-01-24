@@ -13,7 +13,7 @@ describe("searchShopPerformanceWidget", () => {
     homePage.getShopPerformanceWidget().should("be.visible");
     homePage
       .getShopPerformanceWidgetText()
-      .should("have.text", homePageData.actionIcons[3]);
+      .should("have.text", homePageData.actionIcons[4]);
     homePage
       .clickShopPerformanceWidget()
       .getPerformanceFabricsPageUrl()

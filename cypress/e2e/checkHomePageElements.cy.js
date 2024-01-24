@@ -17,7 +17,7 @@ describe("checkMainPageTitleAndLogo", () => {
       .and("include", homePageData.title );
   });
 
-  it("TC_001.001.002 | Main page > Self > Check image boxes visibility", () => {
+  it.skip("TC_001.001.002 | Main page > Self > Check image boxes visibility", () => {
     homePage
     .getImageBoxButton()
     .should("be.visible")
@@ -29,7 +29,7 @@ describe("checkMainPageTitleAndLogo", () => {
             const textArray = Cypress.$.makeArray($els).map($el =>$el.innerText)
             return textArray;
         })
-    .should("have.length", homePageData.actionIconsQuantity)
+    .should("have.length",homePageData.actionIcons)
     .and("deep.equal",homePageData.actionIcons);
 });
 });

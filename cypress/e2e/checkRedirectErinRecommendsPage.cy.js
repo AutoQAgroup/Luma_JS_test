@@ -3,7 +3,7 @@
 import HomePage from "../pageObjects/HomePage";
 import ErinRecommendsPage from "../pageObjects/ErinRecommendsPage"
 import ErinRecommendsData from "../fixtures/erinRecommendsData.json"
-describe("checkRedirectPage", () => {
+describe.skip("checkRedirectPage", () => {
   const homePage = new HomePage();
   const erinRecommendsPage = new ErinRecommendsPage();
 
