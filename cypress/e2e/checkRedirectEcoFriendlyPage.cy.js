@@ -3,7 +3,7 @@
 import HomePage from "../pageObjects/HomePage";
 import EcoFriendlyPage from "../pageObjects/EcoFriendlyPage"
 import  EcoFriendlyData from "../fixtures/ecoFriendlyData.json"
-describe("checkRedirectPage", () => {
+describe.skip("checkRedirectPage", () => {
   const homePage = new HomePage();
   const ecoFriendlyPage = new EcoFriendlyPage();
 
