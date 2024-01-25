@@ -14,7 +14,7 @@ class HomePage {
   getHomePageLogo = () => cy.get("a.logo");
   getTitleName = () => cy.get("a.logo img");
   getImageBoxButton = () => cy.get('span[class="action more button"]');
-  getImageBoxesLinks = () => cy.get('span[class="action more icon"]');
+  getImageBoxesLinks = () => cy.get('.action.more');
   getErinRecommendsLink = () =>
     cy.get('span[class="action more icon"]').contains("Shop Erin Recommends");
   getEcoFriendlyLink = () =>
