@@ -64,20 +64,6 @@ class HomePage {
     return new PerformanceFabricsPage();
   }
 
-  verifyLogoPresence() {
-    this.getLumaLogo().should("be.visible");
-    this.getLumaLogo().find("img").should("have.attr", "src");
-
-    return this;
-  }
-
-  visitPages(urls) {
-    urls.forEach((page) => {
-      cy.visit(page);
-      this.verifyLogoPresence();
-    });
-  }
-
   clickLumaLogo() {
     this.getLumaLogo().click();
 
@@ -101,15 +87,6 @@ class HomePage {
     cy.visit(randomUrl)
     
     return new ProductPage()
-  }
-
-  returnHomePage(urls) {
-    urls.forEach((page) => {
-      cy.visit(page);
-      this.clickLumaLogo();
-      this.verifyBaseUrl();
-      this.getMainContent().should("be.visible");
-    }); 
   }
 
   clickWidgetLinks(index) {
