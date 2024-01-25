@@ -18,10 +18,6 @@ describe("checkMainPageTitleAndLogo", () => {
   });
 
   it("TC_001.001.002 | Main page > Self > Check image boxes visibility", () => {
-    // homePage
-    // .getImageBoxButton()
-    // .should("be.visible")
-    // .and("have.text",homePageData.actionButton);
     homePage
     .getImageBoxesLinks()
     .should("be.visible")
