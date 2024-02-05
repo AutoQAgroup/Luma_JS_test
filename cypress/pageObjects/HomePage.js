@@ -6,6 +6,7 @@ import PerformanceFabricsPage from "./PerformanceFabricsPage";
 import SearchResultPage from "./SearchResultPage";
 import ProductPage from "./ProductPage";
 import WhatIsNewPage from "./WhatIsNewPage";
+import ShippingPage from "./ShippingPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -14,7 +15,7 @@ class HomePage {
   getHomePageLogo = () => cy.get("a.logo");
   getTitleName = () => cy.get("a.logo img");
   getImageBoxButton = () => cy.get('span[class="action more button"]');
-  getImageBoxesLinks = () => cy.get('.action.more');
+  getImageBoxesLinks = () => cy.get(".action.more");
   getErinRecommendsLink = () =>
     cy.get('span[class="action more icon"]').contains("Shop Erin Recommends");
   getEcoFriendlyLink = () =>
@@ -27,8 +28,24 @@ class HomePage {
   getHomePageUrl = () => cy.url();
   getMainContent = () => cy.get("#maincontent");
   getSearchInput = () => cy.get("#search");
-  getWidgetLinks = () => cy.get('div.blocks-promo a');
-  getWhatIsNewPageLink = () => cy.get("a[href='https://magento.softwaretestingboard.com/what-is-new.html']");
+  getWidgetLinks = () => cy.get("div.blocks-promo a");
+  getWhatIsNewPageLink = () =>
+    cy.get(
+      "a[href='https://magento.softwaretestingboard.com/what-is-new.html']"
+    );
+  getCartIcon = () => cy.get("a.showcart");
+  getMiniCartEmptyPopup = () => cy.get("div.block-minicart");
+  getItemSizeButton = () =>
+    cy.get("li.product-item:first-child .size [option-label='M']");
+  getItemColorButton = () =>
+    cy.get("li.product-item:first-child .color [option-label='Orange']");
+  getItemAddToCartButton = () =>
+    cy.get("li.product-item:first-child button[title='Add to Cart']");
+  getCartItemsCounter = () => cy.get("span.counter-number");
+  getCartProceedToCheckoutButton = () =>
+    cy.get("div#minicart-content-wrapper button#top-cart-btn-checkout");
+  getCartViewAndEditCartLink = () =>
+    cy.get("div#minicart-content-wrapper a[class='action viewcart']");
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -75,25 +92,24 @@ class HomePage {
   }
 
   performSearch(searchQuery) {
-    this.getSearchInput().type(searchQuery).type('{enter}')
+    this.getSearchInput().type(searchQuery).type("{enter}");
 
-    return new SearchResultPage()
+    return new SearchResultPage();
   }
 
   visitRandomPDPFromArrayUrl(array) {
-    let randomUrlIndex = Math.floor(Math.random() * array.length)
+    let randomUrlIndex = Math.floor(Math.random() * array.length);
     let randomUrl = array[randomUrlIndex];
 
-    cy.visit(randomUrl)
-    
-    return new ProductPage()
+    cy.visit(randomUrl);
+
+    return new ProductPage();
   }
 
   clickWidgetLinks(index) {
-    this.getWidgetLinks().eq(index).click()
+    this.getWidgetLinks().eq(index).click();
 
-    return cy.url()
-
+    return cy.url();
   }
 
   clickWhatsNewPageLink() {
@@ -104,10 +120,11 @@ class HomePage {
 
   verifySearchBar() {
     this.getSearchInput().should("be.visible");
-    this.getSearchInput().invoke("attr","placeholder")
-    .then((placeholder) => {
-      expect(placeholder).to.eql("Search entire store here...")
-    })
+    this.getSearchInput()
+      .invoke("attr", "placeholder")
+      .then((placeholder) => {
+        expect(placeholder).to.eql("Search entire store here...");
+      });
 
     return this;
   }
@@ -119,5 +136,24 @@ class HomePage {
     });
   }
 
+  clickCartIcon() {
+    this.getCartIcon().click();
+
+    return this;
+  }
+
+  addItemToCart() {
+    this.getItemSizeButton().click();
+    this.getItemColorButton().click();
+    this.getItemAddToCartButton().click({ force: true });
+
+    return this;
+  }
+
+  clickCartProceedToCheckoutButton() {
+    this.getCartProceedToCheckoutButton().click();
+
+    return new ShippingPage();
+  }
 }
 export default HomePage;
