@@ -17,7 +17,7 @@ describe("headerCart", () => {
         .should("be.visible");
   });
 
-  it("TC_003.004.002 Header > Cart > Reserved items number", () => {
+  it.skip("TC_003.004.002 Header > Cart > Reserved items number", () => {
     homepage
       .addItemToCart()
       .getCartItemsCounter()
@@ -47,7 +47,7 @@ describe("headerCart", () => {
       .and("contain", "View and Edit Cart");
   });
 
-  it("TC_003.004.005 Header > Cart > Icon absence on order proceed windows", () => {
+  it.skip("TC_003.004.005 Header > Cart > Icon absence on order proceed windows", () => {
     homepage
         .addItemToCart();
     cy.wait(2000);

@@ -16,4 +16,12 @@ describe("productPageMainInfoName", () => {
     productPage
         .compareNameAndEndPoint();
   });
+  it("TC_002.008.002 | Product page > Main info -Name>SKU# and it's value.", () => {
+    productPage
+        .getSKU()
+        .should('be.visible');
+    productPage
+        .getSKUvalue()
+        .should('not.be.empty');
+  });
 })
