@@ -1,0 +1,24 @@
+{
+  "createNewCustomerAccountFields": [
+    "First Name",
+    "Last Name",
+    "Email",
+    "Password",
+    "Confirm Password"
+  ],
+
+  "fieldsAttribute": [
+    "firstname",
+    "lastname",
+    "email_address",
+    "password",
+    "password-confirmation"
+  ],
+
+  "firstName": "Name",
+  "lastName": "LastName",
+  "password": "Name LastName",
+  "myAccountPageHeader": "My Account",
+  "myAccountPageMessage": "Thank you for registering with Main Website Store.",
+  "errorMessage": "This is a required field."
+}
