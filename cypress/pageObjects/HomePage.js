@@ -7,6 +7,7 @@ import SearchResultPage from "./SearchResultPage";
 import ProductPage from "./ProductPage";
 import WhatIsNewPage from "./WhatIsNewPage";
 import ShippingPage from "./ShippingPage";
+import CreateNewCustomerAccountPage from "./CreateNewCustomerAccountPage";
 
 class HomePage {
   getWomanMainMenuLink = () => cy.get("#ui-id-4");
@@ -46,6 +47,10 @@ class HomePage {
     cy.get("div#minicart-content-wrapper button#top-cart-btn-checkout");
   getCartViewAndEditCartLink = () =>
     cy.get("div#minicart-content-wrapper a[class='action viewcart']");
+  getCreateAnAccountLink = () =>
+    cy.get(
+      "a[href='https://magento.softwaretestingboard.com/customer/account/create/']"
+    ).contains("Create an Account");
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -154,6 +159,12 @@ class HomePage {
     this.getCartProceedToCheckoutButton().click();
 
     return new ShippingPage();
+  }
+
+  clickCreateAnAccountLink() {
+    this.getCreateAnAccountLink().click();
+
+    return new CreateNewCustomerAccountPage();
   }
 }
 export default HomePage;
