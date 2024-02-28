@@ -32,6 +32,22 @@ beforeEach(() => {
       
        
   });
+
+  it("TC_002.013.002 ProductP>Color choice block>No color repeats", () => {
+    productPage
+      .getColorItem()
+      .should("have.length", 3)
+      .then(($els) => {
+        const colorCollection = Cypress.$.makeArray($els).map(
+          ($el) => $el.style.backgroundColor
+        );
+        const arr = colorCollection.filter(
+          (el) =>
+            colorCollection.indexOf(el) === colorCollection.lastIndexOf(el)
+        );
+        expect(colorCollection).to.be.deep.equal(arr);
+      });
+  });
 });
 
 
