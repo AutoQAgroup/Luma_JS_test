@@ -5,7 +5,6 @@ import ProductPageData from "../fixtures/productPageData.json";
 
 describe("productPageColorChoiceBlock", () => {
   const productPage = new ProductPage();
-//   const womanJacketsPage = new WomanJacketsPage();
 
 beforeEach(() => {
     cy.visit(ProductPageData.ExampleUrl);
