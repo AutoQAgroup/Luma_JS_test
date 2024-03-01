@@ -5,7 +5,6 @@ import ProductPageData from "../fixtures/productPageData.json";
 
 describe("productPageColorChoiceBlock", () => {
   const productPage = new ProductPage();
-//   const womanJacketsPage = new WomanJacketsPage();
 
 beforeEach(() => {
     cy.visit(ProductPageData.ExampleUrl);
@@ -31,6 +30,22 @@ beforeEach(() => {
       .and('have.css',"background-image",'none');
       
        
+  });
+
+  it("TC_002.013.002 ProductP>Color choice block>No color repeats", () => {
+    productPage
+      .getColorItem()
+      .should("have.length", 3)
+      .then(($els) => {
+        const colorCollection = Cypress.$.makeArray($els).map(
+          ($el) => $el.style.backgroundColor
+        );
+        const arr = colorCollection.filter(
+          (el) =>
+            colorCollection.indexOf(el) === colorCollection.lastIndexOf(el)
+        );
+        expect(colorCollection).to.be.deep.equal(arr);
+      });
   });
 });
 

@@ -21,7 +21,7 @@ class ProductPage {
     getSKU = () => cy.get('div.product.attribute.sku');
     getSKUvalue = () =>cy.get('div[itemprop="sku"]');
     getColorBlock = () => cy.get('div.swatch-attribute.color'); 
-    
+    getColorItem = () => cy.get('div.swatch-option.color')
   compareNameAndEndPoint() {
     this.getProductName().then(($el)=>{
       let text = $el.text().toLowerCase().split(' ').join('-')

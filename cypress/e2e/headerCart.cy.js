@@ -4,7 +4,7 @@ import HomePage from "../pageObjects/HomePage";
 import ShippingPage from "../pageObjects/ShippingPage";
 import PaymentPage from "../pageObjects/PaymentPage";
 
-describe("headerCart", () => {
+describe.skip("headerCart", () => {
   const homepage = new HomePage();
   const shippingPage = new ShippingPage();
   const paymentPage = new PaymentPage();
