@@ -21,14 +21,19 @@ class ProductPage {
     getSKU = () => cy.get('div.product.attribute.sku');
     getSKUvalue = () =>cy.get('div[itemprop="sku"]');
     getColorBlock = () => cy.get('div.swatch-attribute.color'); 
-    getColorItem = () => cy.get('div.swatch-option.color')
+    getColorItem = () => cy.get('div.swatch-option.color');
+    getContainer = () => cy.get('div.swatch-attribute-options.clearfix');
+    
   compareNameAndEndPoint() {
     this.getProductName().then(($el)=>{
       let text = $el.text().toLowerCase().split(' ').join('-')
       expect(text).to.eql(productPageData.ExampleUrlEndPoint)
       return this;
     });
+  };
+   
+       
   }
-  }
+  
   
 export default ProductPage;
