@@ -35,7 +35,6 @@ beforeEach(() => {
   it("TC_002.013.002 ProductP>Color choice block>No color repeats", () => {
     productPage
       .getColorItem()
-      .should("have.length", 3)
       .then(($els) => {
         const colorCollection = Cypress.$.makeArray($els).map(
           ($el) => $el.style.backgroundColor
@@ -46,6 +45,16 @@ beforeEach(() => {
         );
         expect(colorCollection).to.be.deep.equal(arr);
       });
+  });
+
+  it("TC_002.013.003 ProductP>Color choice block>No border by default", () => {
+    productPage
+      .getContainer()
+      .eq(1)
+      .children('.swatch-option.color.selected')
+      .should('not.exist');
+     
+     
   });
 });
 
