@@ -23,7 +23,7 @@ class ProductPage {
     getColorBlock = () => cy.get('div.swatch-attribute.color'); 
     getColorItem = () => cy.get('div.swatch-option.color');
     getContainer = () => cy.get('div.swatch-attribute-options.clearfix');
-    
+    getColorText = () => cy.get('#option-label-color-93');
   compareNameAndEndPoint() {
     this.getProductName().then(($el)=>{
       let text = $el.text().toLowerCase().split(' ').join('-')

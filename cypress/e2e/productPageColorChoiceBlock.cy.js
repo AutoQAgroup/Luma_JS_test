@@ -56,6 +56,15 @@ beforeEach(() => {
      
      
   });
+
+  it("TC_002.013.004 ProductP>Color choice block>No text near 'Color' by default", () => {
+    productPage
+      .getColorText()
+      .next()
+      .should('have.text','');
+        
+  });
+
 });
 
 
