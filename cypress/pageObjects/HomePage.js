@@ -51,6 +51,13 @@ class HomePage {
     cy.get(
       "a[href='https://magento.softwaretestingboard.com/customer/account/create/']"
     ).contains("Create an Account");
+  getMenDropDownBtn = () => cy.get("#ui-id-2 > li.level0.nav-3");
+  getMenDropDownMenu = () => cy.get("li.level0.nav-3 > ul.level0.submenu");
+  getMenDrpoDownMenuItems = () => cy.get("li.level0.nav-3 > ul > li.level1");
+  getMenDropDownTops = () => cy.get("li.level1.nav-3-1"); 
+  getMenDropDownTopsItems = () => cy.get("ul > li.level1.nav-3-1 > ul > li.level2");
+  getMenDropDownBottoms = () => cy.get("li.level1.nav-3-2");
+  getMenDropDownBottomsItems = () => cy.get("ul > li.level1.nav-3-2 > ul > li.level2");
 
   hoverWomanMainMenuLink() {
     this.getWomanMainMenuLink().trigger("mouseover");
@@ -165,6 +172,30 @@ class HomePage {
     this.getCreateAnAccountLink().click();
 
     return new CreateNewCustomerAccountPage();
+  }
+
+  hoverMenDropDownBtn(){
+    this.getMenDropDownBtn().trigger("mouseover");
+
+    return this;
+  }
+
+  hoverMenDropDownTops(){
+    this.getMenDropDownTops().trigger("mouseover");
+
+    return this;
+  }
+
+  hoverMenDropDownBottoms(){
+    this.getMenDropDownBottoms().trigger("mouseover");
+
+    return this;
+  }
+
+  triggerSubMenuHover(){
+    this.getMenDropDownMenu().trigger("mouseover");
+
+    return this;
   }
 }
 export default HomePage;

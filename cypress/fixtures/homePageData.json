@@ -28,5 +28,8 @@
       "Performance Fabrics",
       "Eco Friendly"
     ]
-  }
+  },
+  "menDropDownMenuItems": ["Tops", "Bottoms"],
+  "menDropDownTopsItems": ["Jackets", "Hoodies & Sweatshirts", "Tees", "Tanks"],
+  "menDropDownBottomsItems": ["Pants", "Shorts"]
 }
